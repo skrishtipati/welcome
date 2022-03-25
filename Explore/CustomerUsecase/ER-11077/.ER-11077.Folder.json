@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "5mgkTPQtJErfkAbusJH0US",
+    "name" : "ER-11077",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "CAI Process not loading in Azure POD\nThe customer has reported that they imported a connection and a process into their Test ORG using GITHUB. When they are seeing is that the connection has a unique name - con-Snowflake-EDNA-1. There is no other connection with this name in the org. \n\nAlso, when the customer tries to open the process - aip_MerchantPlanQuery, it does not load in the designer and the UI simply hangs.  Please see the attached screenshot.\n\nI had a meeting with the customer and looked at the connection and the process. When I logged on to the customer org on our end using GCS account, the process did not load. So, the issue is consistently reproducible.  \n\nNew connections \\ process created in this org work fine. So, the issue seems to be specific to the artifacts imported into the org from Git.",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

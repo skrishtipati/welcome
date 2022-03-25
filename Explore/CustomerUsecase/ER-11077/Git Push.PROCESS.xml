@@ -1,0 +1,280 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>3fZPE4zlrMZgpDq-gt-5467-2022-03-25T05:38:48.872Z::pd.xml</types1:EntryId>
+      <types1:Name>Git_Push</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>skrishtipati@infa.com</types1:CreatedBy>
+      <types1:CreationDate>2022-03-25T05:38:49Z</types1:CreationDate>
+      <types1:ModifiedBy>skrishtipati@infa.com</types1:ModifiedBy>
+      <types1:ModificationDate>2022-03-25T05:43:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>skrishtipati@infa.com</types1:PublishedBy>
+      <types1:PublicationDate>2022-03-25T05:44:30Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Git_Push/Git_Push.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Git Push"
+                  name="Git_Push"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="l15yxiv7" targetId="l15yxiv6"/>
+               </start>
+               <container id="l15yxiv6" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="l15yxiva">
+                     <subflow id="l15yxivz">
+                        <title>TestS3FileRead</title>
+                        <subflowGUID>3HKRgdupcqnliF7XOkH8Ke</subflowGUID>
+                        <subflowPath>TestS3FileRead</subflowPath>
+                        <runForEach>false</runForEach>
+                        <input/>
+                        <outputDef>
+                           <field name="untitled1" type="string">
+                              <options>
+                                 <option name="required">false</option>
+                              </options>
+                           </field>
+                        </outputDef>
+                        <link id="l15yxj17" targetId="l15yxj2q"/>
+                     </subflow>
+                     <eventContainer id="l15yxj2q">
+                        <service id="l15yxj16">
+                           <title>Run Cloud Task</title>
+                           <serviceName>ICSExecuteTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">MCT_Auto1 [MCT]</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">false</parameter>
+                              <parameter name="Fail on Cloud Task Errors" source="constant">false</parameter>
+                              <parameter name="GUID" source="constant">aJg01awALS5d3EQ4t4LMYa</parameter>
+                           </serviceInput>
+                        </service>
+                        <flow id="l15yxj2s">
+                           <link id="l15yxj2t" targetId="l15yxj2q" type="containerLink"/>
+                        </flow>
+                        <flow id="l15yxj2v">
+                           <container id="l15yxj3d" type="exclusive">
+                              <title>Task Status</title>
+                              <flow id="l15yxj3f">
+                                 <subflow id="l15yxj50">
+                                    <title>wait</title>
+                                    <subflowGUID>bNU7tT1v1oCjFzPOSOUc4b</subflowGUID>
+                                    <subflowPath>wait</subflowPath>
+                                    <runForEach>false</runForEach>
+                                    <input/>
+                                    <outputDef/>
+                                 </subflow>
+                                 <link id="l15yxj3g" targetId="l15yxj3d" type="containerLink"/>
+                              </flow>
+                              <flow id="l15yxj3i">
+                                 <subflow id="l15yxj60">
+                                    <title>ProcessWithPO</title>
+                                    <subflowGUID>0uAV4ak2EmHgdgtFVPd5Ys</subflowGUID>
+                                    <subflowPath>ProcessWithPO</subflowPath>
+                                    <runForEach>false</runForEach>
+                                    <input/>
+                                    <outputDef/>
+                                 </subflow>
+                                 <link id="l15yxj3j" targetId="l15yxj3d" type="containerLink"/>
+                              </flow>
+                              <link id="l15yxj3e" targetId="l15yxj3f" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="contains">
+                                       <arg name="left">{$output.TaskStatus}</arg>
+                                       <arg name="right">e</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="l15yxj3h" targetId="l15yxj3i" type="containerLink"/>
+                           </container>
+                           <link id="l15yxj2w" targetId="l15yxj2q" type="containerLink"/>
+                        </flow>
+                        <link id="l15yxj2r" targetId="l15yxj2s" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultInfo" id="l15yxj1l" interrupting="true">
+                              <link id="l15yxj2u" targetId="l15yxj2v" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="l15yxivb" targetId="l15yxiv6" type="containerLink"/>
+                  </flow>
+                  <flow id="l15yxivd">
+                     <subflow id="l15yxiw6">
+                        <title>ProcessWithPO</title>
+                        <subflowGUID>0uAV4ak2EmHgdgtFVPd5Ys</subflowGUID>
+                        <subflowPath>ProcessWithPO</subflowPath>
+                        <runForEach>false</runForEach>
+                        <input/>
+                        <outputDef/>
+                     </subflow>
+                     <link id="l15yxive" targetId="l15yxiv6" type="containerLink"/>
+                  </flow>
+                  <flow id="l15yxivi">
+                     <eventContainer id="l15yxiyr">
+                        <service id="l15yxiwd">
+                           <title>Run Cloud Task</title>
+                           <serviceName>ICSExecuteTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">MCT_Auto1 [MCT]</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">false</parameter>
+                              <parameter name="Fail on Cloud Task Errors" source="constant">false</parameter>
+                              <parameter name="GUID" source="constant">jdodtNAlZKikE5pFH0tgqr</parameter>
+                           </serviceInput>
+                        </service>
+                        <flow id="l15yxiyt">
+                           <link id="l15yxiyu" targetId="l15yxiyr" type="containerLink"/>
+                        </flow>
+                        <flow id="l15yxiyw">
+                           <subflow id="l15yxizb">
+                              <title>loadFilePathWrapper</title>
+                              <subflowGUID>aiY4X7ewmx0koTM1bBBLUv</subflowGUID>
+                              <subflowPath>loadFilePathWrapper</subflowPath>
+                              <runForEach>false</runForEach>
+                              <input/>
+                              <outputDef>
+                                 <field name="ResponseText" type="string">
+                                    <options>
+                                       <option name="required">false</option>
+                                    </options>
+                                 </field>
+                              </outputDef>
+                           </subflow>
+                           <link id="l15yxiyx" targetId="l15yxiyr" type="containerLink"/>
+                        </flow>
+                        <link id="l15yxiys" targetId="l15yxiyt" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultInfo" id="l15yxix6" interrupting="true">
+                              <link id="l15yxiyv" targetId="l15yxiyw" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="l15yxivj" targetId="l15yxiv6" type="containerLink"/>
+                  </flow>
+                  <link id="l15yxiv9" targetId="l15yxiva" type="containerLink"/>
+                  <link id="l15yxivc" targetId="l15yxivd" type="containerLink"/>
+                  <link id="l15yxjvr" targetId="l15yxjvq"/>
+                  <link id="l15yxivh" targetId="l15yxivi" type="containerLink"/>
+               </container>
+               <service id="l15yxjvq">
+                  <title>Run a Shell Command 1 1 1</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_Auto1 [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">false</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">false</parameter>
+                     <parameter name="GUID" source="constant">jdodtNAlZKikE5pFH0tgqr</parameter>
+                  </serviceInput>
+                  <link id="l15yxjvs" targetId="l15yxjt2"/>
+               </service>
+               <service id="l15yxjt2">
+                  <title>Run a Shell Command 1 1</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_Auto1 [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">false</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">false</parameter>
+                     <parameter name="GUID" source="constant">jdodtNAlZKikE5pFH0tgqr</parameter>
+                  </serviceInput>
+                  <link id="l15yxjt4" targetId="l15yxjqe"/>
+               </service>
+               <service id="l15yxjqe">
+                  <title>Run a Shell Command 1</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_Auto1 [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">false</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">false</parameter>
+                     <parameter name="GUID" source="constant">jdodtNAlZKikE5pFH0tgqr</parameter>
+                  </serviceInput>
+                  <link id="l15yxjqg" targetId="l15yxj7h"/>
+               </service>
+               <service id="l15yxj7h">
+                  <title>Run Cloud Task</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_Auto1 [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">false</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">false</parameter>
+                     <parameter name="GUID" source="constant">jdodtNAlZKikE5pFH0tgqr</parameter>
+                  </serviceInput>
+                  <link id="l15yxjfi" targetId="l15yxjfh"/>
+               </service>
+               <subflow id="l15yxjfh">
+                  <title>ProcessWithPO 1</title>
+                  <subflowGUID>0uAV4ak2EmHgdgtFVPd5Ys</subflowGUID>
+                  <subflowPath>ProcessWithPO</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="l15yxjnm" targetId="l15yxjnl"/>
+               </subflow>
+               <subflow id="l15yxjnl">
+                  <title>ProcessWithPO 1 1 1 1 1</title>
+                  <subflowGUID>0uAV4ak2EmHgdgtFVPd5Ys</subflowGUID>
+                  <subflowPath>ProcessWithPO</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="l15yxjnn" targetId="l15yxjl4"/>
+               </subflow>
+               <subflow id="l15yxjl4">
+                  <title>ProcessWithPO 1 1 1 1</title>
+                  <subflowGUID>0uAV4ak2EmHgdgtFVPd5Ys</subflowGUID>
+                  <subflowPath>ProcessWithPO</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="l15yxjl6" targetId="l15yxjiv"/>
+               </subflow>
+               <subflow id="l15yxjiv">
+                  <title>ProcessWithPO 1 1 1</title>
+                  <subflowGUID>0uAV4ak2EmHgdgtFVPd5Ys</subflowGUID>
+                  <subflowPath>ProcessWithPO</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="l15yxjix" targetId="l15yxjgu"/>
+               </subflow>
+               <subflow id="l15yxjgu">
+                  <title>ProcessWithPO 1 1</title>
+                  <subflowGUID>0uAV4ak2EmHgdgtFVPd5Ys</subflowGUID>
+                  <subflowPath>ProcessWithPO</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input/>
+                  <outputDef/>
+                  <link id="l15yxjgw" targetId="c"/>
+               </subflow>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>2ctDU3BkHOtcofMOJ4Xz2U</types1:GUID>
+      <types1:DisplayName>Git Push</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-03-25T05:55:52.076Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

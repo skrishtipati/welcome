@@ -1,0 +1,84 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>aaaaa-gt-85573-2022-03-24T09:16:36.008Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessWithPO</types1:Name>
+      <types1:ParentFlowIds>3fZPE4zlrMZgpDq-gt-5467-2022-03-25T05:38:48.872Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>skrishtipati@infa.com</types1:CreatedBy>
+      <types1:CreationDate>2022-03-24T09:16:36Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>skrishtipati@infa.com</types1:PublishedBy>
+      <types1:PublicationDate>2022-03-25T05:44:29Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessWithPO/ProcessWithPO.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessWithPO"
+                  name="ProcessWithPO"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="untitled1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:AddressPO</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">aZR2oDZ83aRezNitD1S0OK</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="untitled2" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ChildPO</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">6dj9SZu6XZtiiE4u54H1YG</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="untitled3" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CommonUIProcessObject</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">45CJ6VWnlEbhYgkJUC0YKt</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="untitled4" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:designerTestPO</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">17PBDVbNcu9fLHSRPJSz0U</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="link1" targetId="c"/>
+               </start>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>0uAV4ak2EmHgdgtFVPd5Ys</types1:GUID>
+      <types1:DisplayName>ProcessWithPO</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-03-25T06:00:54.844Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

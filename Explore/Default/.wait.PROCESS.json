@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "bNU7tT1v1oCjFzPOSOUc4b",
+    "name" : "wait",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ow4ARW8UBM7zsZv-gt-82877-2022-03-24T06:59:37.231Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

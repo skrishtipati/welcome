@@ -1,0 +1,116 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>oplp6oIuQaaabcm-gt-62057-2022-03-22T06:19:32.229Z::pd.xml</types1:EntryId>
+      <types1:Name>LoadFileByPath</types1:Name>
+      <types1:ParentFlowIds>FFrLWEQT53nQciS-gt-43053-2022-03-22T06:19:32.505Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>FileReader,Primitive</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>skrishtipati@infa.com</types1:CreatedBy>
+      <types1:CreationDate>2022-03-22T06:19:32Z</types1:CreationDate>
+      <types1:ModifiedBy>skrishtipati@infa.com</types1:ModifiedBy>
+      <types1:ModificationDate>2022-03-24T06:59:37Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>skrishtipati@infa.com</types1:PublishedBy>
+      <types1:PublicationDate>2022-03-25T05:44:29Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.LoadFileByPath/LoadFileByPath.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="LoadFileByPath"
+                  name="LoadFileByPath"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>FileReader,Primitive</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="content" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="path" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="fileExists" type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="imbzk3ku" targetId="imbzk3kt"/>
+               </start>
+               <assignment id="imbzk3kt">
+                  <title>Assignment to path, fileExists</title>
+                  <operation source="formula" to="temp.path">
+                     <expression language="XQuery">'file:///C:/work/Metadata.csv'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.fileExists">
+                     <expression language="XQuery">fn:unparsed-text-available($temp.path )</expression>
+                  </operation>
+                  <link id="jspe2jwj" targetId="jspe2jwi"/>
+               </assignment>
+               <container id="jspe2jwi" type="exclusive">
+                  <title>fileExists?</title>
+                  <flow id="jspe2jwm">
+                     <assignment id="jspe2jww">
+                        <title>Assignment to content</title>
+                        <operation source="formula" to="output.content">
+                           <expression language="XQuery">fn:unparsed-text($temp.path)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="jspe2jwn" targetId="jspe2jwi" type="containerLink"/>
+                  </flow>
+                  <flow id="jspe2jwp">
+                     <assignment id="jspe2jx6">
+                        <title>Assignment to content</title>
+                        <operation source="constant" to="output.content">ERROR: File does not exist</operation>
+                     </assignment>
+                     <link id="jspe2jwq" targetId="jspe2jwi" type="containerLink"/>
+                  </flow>
+                  <link id="jspe2jwl" targetId="jspe2jwm" type="containerLink">
+                     <condition source="formula">
+                        <function name="true">
+                           <arg name="field">{$temp.fileExists}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="jspe2jwo" targetId="jspe2jwp" type="containerLink">
+                     <condition source="formula">
+                        <function name="false">
+                           <arg name="field">{$temp.fileExists}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="jspe2jxg" targetId="j9pfsflq"/>
+               </container>
+               <end id="j9pfsflq"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>aNpPHoM8sGKcL1PZy4j4UC</types1:GUID>
+      <types1:DisplayName>LoadFileByPath</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-03-25T06:00:54.764Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

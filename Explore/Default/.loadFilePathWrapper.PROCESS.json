@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "aiY4X7ewmx0koTM1bBBLUv",
+    "name" : "loadFilePathWrapper",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "FFrLWEQT53nQciS-gt-43053-2022-03-22T06:19:32.505Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "aNpPHoM8sGKcL1PZy4j4UC",
+    "name" : "LoadFileByPath",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "oplp6oIuQaaabcm-gt-62057-2022-03-22T06:19:32.229Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Default"
+  } ]
+}

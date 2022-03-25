@@ -1,0 +1,59 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ow4ARW8UBM7zsZv-gt-82877-2022-03-24T06:59:37.231Z::pd.xml</types1:EntryId>
+      <types1:Name>wait</types1:Name>
+      <types1:ParentFlowIds>3fZPE4zlrMZgpDq-gt-5467-2022-03-25T05:38:48.872Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>skrishtipati@infa.com</types1:CreatedBy>
+      <types1:CreationDate>2022-03-24T06:59:37Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>skrishtipati@infa.com</types1:PublishedBy>
+      <types1:PublicationDate>2022-03-25T05:44:29Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.wait/wait.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="wait"
+                  name="wait">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 8</generator>
+            <notes/>
+            <deployment>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="link1" targetId="c"/>
+               </start>
+               <wait id="c">
+                  <duration source="formula">
+                     <function name="duration_expression">
+                        <arg name="value">1</arg>
+                        <arg name="scale">M</arg>
+                        <arg name="businessDays"/>
+                     </function>
+                  </duration>
+                  <link id="link2" targetId="d"/>
+               </wait>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>bNU7tT1v1oCjFzPOSOUc4b</types1:GUID>
+      <types1:DisplayName>wait</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-03-25T06:00:54.809Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

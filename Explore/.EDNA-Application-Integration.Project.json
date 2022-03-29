@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "5jL2FRkpdzjl1i9JeQp9Q1",
+    "name" : "EDNA-Application-Integration",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

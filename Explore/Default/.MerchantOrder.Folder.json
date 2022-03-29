@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "7sL7s8z9tU9lkxJL6BjO06",
+    "name" : "MerchantOrder",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Merchant order related APIs",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

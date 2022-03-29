@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "0O27p6TFrQvdidDdAkzHCz",
+    "name" : "aip_LiquidityPlan",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "DACUtoVVVVVVVVV-gt-3427-2022-01-28T19:36:04.647Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "5pQXJoYwp4gfCn8iLmpxku",
+    "name" : "con-Snowflake-EDNA",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "fRZoSRnCKwKBqRi-gt-3354-2022-01-28T19:36:04.208Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Burlington-edna.DEV_EDNA_DB.API",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/EDNA-Application-Integration/MerchantOrder"
+  } ]
+}

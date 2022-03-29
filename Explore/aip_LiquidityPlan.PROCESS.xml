@@ -1,0 +1,114 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>DACUtoVVVVVVVVV-gt-3427-2022-01-28T19:36:04.647Z::pd.xml</types1:EntryId>
+      <types1:Name>aip_LiquidityPlan</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>dwithri1.dev.dev</types1:CreatedBy>
+      <types1:CreationDate>2022-01-28T19:36:05Z</types1:CreationDate>
+      <types1:ModifiedBy>dwithri1.dev.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-03-22T18:05:12Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>dwithri1.dev.dev</types1:PublishedBy>
+      <types1:PublicationDate>2022-03-22T18:05:48Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.aip_LiquidityPlan/aip_LiquidityPlan.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="aip_LiquidityPlan"
+                  name="aip_LiquidityPlan"
+                  overrideAPIName="true">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_MonthStart" required="true" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_MonthEnd" required="true" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_ClassIdList"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_LiquidityPlanQuery" type="objectlist">
+                  <options>
+                     <option name="referenceTo">con-Snowflake-EDNA-2:RVW_MERCHANT_LIQUIDITY_SCHEDULE_PERCENT</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5pQXJoYwp4gfCn8iLmpxku</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <cors>
+                     <allowed>
+                        <origins>*</origins>
+                        <methods>ALL_METHODS</methods>
+                     </allowed>
+                  </cors>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kynoe1k2" targetId="kynm0f7k"/>
+               </start>
+               <assignment id="kynm0f7k">
+                  <title>Assignment to out_LiquidityPlanQuery</title>
+                  <operation source="list" to="output.out_LiquidityPlanQuery">
+                     <query advanceQuery="true"
+                            from="con-Snowflake-EDNA-2:RVW_MERCHANT_LIQUIDITY_SCHEDULE_PERCENT">
+                        <where>CLASS_ID IN ({$input.in_ClassIdList}) AND FISCAL_MONTH_CODE &gt;= {$input.in_MonthStart} AND FISCAL_MONTH_CODE &lt;= {$input.in_MonthEnd}</where>
+                     </query>
+                  </operation>
+                  <link id="kynm0f7m" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>47a9ab37-deb6-4d13-818e-e4e5943329f7</ns1:Id>
+               <ns1:Name>InternalWebServe</ns1:Name>
+               <ns1:CreatedBy>dwithri1.dev.dev</ns1:CreatedBy>
+               <ns1:CreationDate>2022-01-28T19:36:05Z</ns1:CreationDate>
+               <ns1:ModifiedBy>dwithri1.dev.dev</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2022-01-28T19:36:05Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+"in_MonthEnd": 202204,
+"in_MonthStart": 202201,
+"in_ClassIdList": "5287,6714"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>0O27p6TFrQvdidDdAkzHCz</types1:GUID>
+      <types1:DisplayName>aip_LiquidityPlan</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-03-22T18:08:47.816Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

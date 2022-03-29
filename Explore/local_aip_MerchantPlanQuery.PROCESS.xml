@@ -1,0 +1,103 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>m1jlMfVMTonQYWe-gt-73667-2022-02-08T23:20:27.196Z::pd.xml</types1:EntryId>
+      <types1:Name>local_aip_MerchantPlanQuery</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:EDNA-Integration-Cluster,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>dwithri1.dev.dev</types1:CreatedBy>
+      <types1:CreationDate>2022-02-08T23:20:27Z</types1:CreationDate>
+      <types1:ModifiedBy>sshacter.develop</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-21T20:31:59Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sshacter.develop</types1:PublishedBy>
+      <types1:PublicationDate>2022-02-21T20:32:07Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.local_aip_MerchantPlanQuery/local_aip_MerchantPlanQuery.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="local_aip_MerchantPlanQuery"
+                  name="local_aip_MerchantPlanQuery"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:EDNA-Integration-Cluster,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Comma delimited set of ClassId's "
+                          name="in_ClassIdList"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_MonthStart" required="true" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_MonthEnd" required="true" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description=""
+                      name="out_MerchantPlanCurrentByClassMonthList"
+                      type="objectlist">
+                  <options>
+                     <option name="referenceTo">con-Snowflake-EDNA-2:RVW_MERCHANT_ORDER_CURRENT_PLAN_CLASS_MONTHLY</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5pQXJoYwp4gfCn8iLmpxku</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <targetLocation>EDNA-Integration-Cluster</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+                  <cors>
+                     <allowed>
+                        <origins>*</origins>
+                        <methods>ALL_METHODS</methods>
+                     </allowed>
+                  </cors>
+                  <wholePayload outputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kyki7ihu" targetId="kyki7iht"/>
+               </start>
+               <assignment id="kyki7iht">
+                  <title>Assignment to out_MerchantPlanCurrentByClassMonthList</title>
+                  <operation source="list" to="output.out_MerchantPlanCurrentByClassMonthList">
+                     <query advanceQuery="true"
+                            from="con-Snowflake-EDNA-2:RVW_MERCHANT_ORDER_CURRENT_PLAN_CLASS_MONTHLY">
+                        <where>CLASS_ID IN ({$input.in_ClassIdList}) AND FISCAL_MONTH_CODE &gt;= {$input.in_MonthStart} AND FISCAL_MONTH_CODE &lt;= {$input.in_MonthEnd}</where>
+                     </query>
+                  </operation>
+                  <link id="kyki7ihv" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>5fzvJgCTlIxhaFcsgnGKQD</types1:GUID>
+      <types1:DisplayName>local_aip_MerchantPlanQuery</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-02-23T02:11:05.171Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

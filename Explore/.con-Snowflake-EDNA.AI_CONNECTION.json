@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "5pQXJoYwp4gfCn8iLmpxku",
+    "name" : "con-Snowflake-EDNA",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "fRZoSRnCKwKBqRi-gt-3354-2022-01-28T19:36:04.208Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Burlington-edna.DEV_EDNA_DB.API",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

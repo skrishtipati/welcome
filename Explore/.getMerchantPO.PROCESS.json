@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "77u68vs4DWkdo11XkE4xmt",
+    "name" : "getMerchantPO",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "vSyIRJi4tciSrZM-gt-8468-2022-01-28T19:32:38.342Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Return the list of Purchase Order quantities and amounts from API.RVW_MERCHANT_PO aggregated at the Class level for a given list of one or more CLASS_ID's.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "5pQXJoYwp4gfCn8iLmpxku",
+    "name" : "con-Snowflake-EDNA",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "fRZoSRnCKwKBqRi-gt-3354-2022-01-28T19:36:04.208Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Burlington-edna.DEV_EDNA_DB.API",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/EDNA-Application-Integration/MerchantOrder"
+  } ]
+}

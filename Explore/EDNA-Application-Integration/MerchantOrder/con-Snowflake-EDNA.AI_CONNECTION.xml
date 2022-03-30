@@ -1,0 +1,67 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>fRZoSRnCKwKBqRi-gt-3354-2022-01-28T19:36:04.208Z::conn.xml</types1:EntryId>
+      <types1:Name>con-Snowflake-EDNA-2</types1:Name>
+      <types1:ParentFlowIds>IO3M4WwOC2XZPnE-gt-4854-2022-01-28T19:36:05.155Z::pd.xml,m1jlMfVMTonQYWe-gt-73667-2022-02-08T23:20:27.196Z::pd.xml,Omkbclopz4KhPVE-gt-4793-2022-01-28T19:31:22.657Z::pd.xml,vSyIRJi4tciSrZM-gt-8468-2022-01-28T19:32:38.342Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>Burlington-edna.DEV_EDNA_DB.API</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:EDNA-Integration-Cluster</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>dwithri1.dev.dev</types1:CreatedBy>
+      <types1:CreationDate>2022-01-28T19:36:04Z</types1:CreationDate>
+      <types1:ModifiedBy>sshacter.develop</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-21T19:53:36Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sshacter.develop</types1:PublishedBy>
+      <types1:PublicationDate>2022-02-21T20:46:44Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/con-Snowflake-EDNA-2/con-Snowflake-EDNA-2.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="con-Snowflake-EDNA"
+                     label="con-Snowflake-EDNA-2"
+                     name="con-Snowflake-EDNA-2">
+            <description>Burlington-edna.DEV_EDNA_DB.API</description>
+            <tags>.agent:EDNA-Integration-Cluster</tags>
+            <agent>EDNA-Integration-Cluster</agent>
+            <attributes>
+               <attribute encrypted="false"
+                          name="JDBC Connection URL"
+                          value="jdbc:snowflake://burlington-edna.snowflakecomputing.com/?warehouse=DEV_EDNA_API_WHS&amp;db=DEV_EDNA_DB&amp;role=DEV_EDNA_API_ROLE"/>
+               <attribute encrypted="false"
+                          name="JDBC Jar Directory"
+                          value="/opt/informatica/drivers/jdbc"/>
+               <attribute encrypted="false" name="JDBC Driver Class Name" value=""/>
+               <attribute encrypted="false" name="Schema" value="API"/>
+               <attribute encrypted="false" name="Username" value="DEV_EDNA_API_USER"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false" name="Object Filter" value=""/>
+               <attribute encrypted="false" name="TimeZone" value="Default"/>
+               <attribute encrypted="false" name="$read-Isolation Level" value="None"/>
+               <attribute encrypted="false"
+                          name="$read-Override Isolation Level"
+                          value="false"/>
+               <attribute encrypted="false" name="$write-Number of retries" value="0"/>
+               <attribute encrypted="false" name="$write-Retry wait period" value="3"/>
+            </attributes>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           plugin="ICS"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="true"
+                           supportsOData="true"
+                           type="GenericJDBCAdapter"
+                           uuid="33ec8fc7-dc6d-4d2e-9f6f-a950669a62d1">
+               <description>JDBC  Generic Cloud Adapter</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>5pQXJoYwp4gfCn8iLmpxku</types1:GUID>
+      <types1:DisplayName>con-Snowflake-EDNA</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-02-21T22:38:17.014Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,119 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>vSyIRJi4tciSrZM-gt-8468-2022-01-28T19:32:38.342Z::pd.xml</types1:EntryId>
+      <types1:Name>getMerchantPO</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Return the list of Purchase Order quantities and amounts from API.RVW_MERCHANT_PO aggregated at the Class level for a given list of one or more CLASS_ID's.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sshacter.develop</types1:CreatedBy>
+      <types1:CreationDate>2022-01-28T19:32:38Z</types1:CreationDate>
+      <types1:ModifiedBy>sshacter.develop</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-21T20:04:22Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sshacter.develop</types1:PublishedBy>
+      <types1:PublicationDate>2022-02-21T20:04:38Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.getMerchantPO/getMerchantPO.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="getMerchantPO"
+                  name="getMerchantPO"
+                  overrideAPIName="true">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Return the list of Purchase Order quantities and amounts from API.RVW_MERCHANT_PO aggregated at the Class level for a given list of one or more CLASS_ID's.</description>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="(1521,1526,1527,4317,4318,4345)"
+                          name="in_ClassIDList"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="PO-BULK and PO-PPK"
+                      name="out_MerchantPO"
+                      type="objectlist">
+                  <options>
+                     <option name="referenceTo">con-Snowflake-EDNA-2:RVW_MERCHANT_PO_CLASS</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5pQXJoYwp4gfCn8iLmpxku</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <cors>
+                     <allowed>
+                        <origins>*</origins>
+                        <methods>ALL_METHODS</methods>
+                     </allowed>
+                  </cors>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kynxjsok" targetId="kynxjsoj"/>
+               </start>
+               <assignment id="kynxjsoj">
+                  <title>Assignment to out_MerchantPO</title>
+                  <operation source="list" to="output.out_MerchantPO">
+                     <query advanceQuery="false" from="con-Snowflake-EDNA-2:RVW_MERCHANT_PO_CLASS">
+                        <where>CS0_CLASS_ID IN ({$input.in_ClassIDList})</where>
+                     </query>
+                  </operation>
+                  <link id="kynxjsox" targetId="kynxjsow"/>
+               </assignment>
+               <assignment id="kynxjsow">
+                  <title>Assignment to out_MerchantPO</title>
+                  <operation source="field" to="output.out_MerchantPO">output.out_MerchantPO</operation>
+                  <link id="kynxjsoy" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>95c6f992-9320-489b-a0b6-3afce3771e56</ns1:Id>
+               <ns1:Name>in_ClassIDList</ns1:Name>
+               <ns1:CreatedBy>sshacter.develop</ns1:CreatedBy>
+               <ns1:CreationDate>2022-01-28T19:32:38Z</ns1:CreationDate>
+               <ns1:ModifiedBy>sshacter.develop</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2022-02-21T20:05:10Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "in_ClassIDList": "1521,1526,1527,4317,4318,4345,3313,2400"
+}</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>3b2b7c96-d5e1-4ae7-a77f-b7df0eda0285</ns1:Id>
+               <ns1:Name>ss</ns1:Name>
+               <ns1:CreatedBy>sshacter.develop</ns1:CreatedBy>
+               <ns1:CreationDate>2022-01-28T19:32:38Z</ns1:CreationDate>
+               <ns1:ModifiedBy>sshacter.develop</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2022-01-28T19:32:38Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "in_ClassIDList": "1521,1526,1527,4317,4318,4345"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>77u68vs4DWkdo11XkE4xmt</types1:GUID>
+      <types1:DisplayName>getMerchantPO</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-02-23T02:10:47.853Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

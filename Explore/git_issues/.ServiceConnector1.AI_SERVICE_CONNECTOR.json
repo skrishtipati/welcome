@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "3ipslXoVXeLbJJYB8vuzek",
+    "name" : "ServiceConnector1",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3OzI1dq2ME9paab-gt-1290864-2024-04-15T20:27:35.881Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-04-15T20:32:59.505Z",
+  "objectRefs" : [ ]
+}

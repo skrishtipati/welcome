@@ -1,0 +1,75 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>QzqbdpIO3M4WwOC-gt-1290913-2024-04-15T20:29:43.681Z::pd.xml</types1:EntryId>
+      <types1:Name>Test_Git_Integra</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>custom_user_common</types1:CreatedBy>
+      <types1:CreationDate>2024-04-15T20:29:44Z</types1:CreationDate>
+      <types1:ModifiedBy>custom_user_common</types1:ModifiedBy>
+      <types1:ModificationDate>2024-04-15T20:30:31Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>custom_user_common</types1:PublishedBy>
+      <types1:PublicationDate>2024-04-15T20:30:41Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Test_Git_Integra/Test_Git_Integra.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Test_Git Integra"
+                  name="Test_Git_Integra"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="untitled1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="o92064483-f2ce-4a91-afda-2a320cb66e6a">
+               <start id="i63e8326d-39c3-42aa-a8e4-5a6b22e6fc2a">
+                  <link id="wf9710eef-1945-490d-a6d3-3ace240c8694"
+                        targetId="Service11bfd75c-8ac7-4878-9e2f-6bb93d279cc1"/>
+               </start>
+               <service id="Service11bfd75c-8ac7-4878-9e2f-6bb93d279cc1">
+                  <title>basic</title>
+                  <serviceName>reqres-Conn:basic</serviceName>
+                  <serviceGUID>h2KIgyl9QWaeOZjj8v4Jqq</serviceGUID>
+                  <serviceInput/>
+                  <link id="qcae52d44-e6e6-4ae0-afae-2ececc97ee04"
+                        targetId="Assignment44797806-e1de-431c-ad38-8cbc73f962f3"/>
+               </service>
+               <assignment id="Assignment44797806-e1de-431c-ad38-8cbc73f962f3">
+                  <title>Assignment to untitled1</title>
+                  <operation source="field" to="output.untitled1">output.outcome</operation>
+                  <link id="f5b2b0277-b054-45e5-a0c5-b3bbfe0d700a"
+                        targetId="end-wa03b3541-1edd-4a42-ae0b-35b94e19e13c"/>
+               </assignment>
+               <end id="end-wa03b3541-1edd-4a42-ae0b-35b94e19e13c">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>g2t259aJHSif9MdBAnDYuG</types1:GUID>
+      <types1:DisplayName>Test_Git Integra</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-04-15T20:32:59.184Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

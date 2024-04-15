@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "7XxGALEAPULgAtdUchLcQt",
+    "id" : "3ipslXoVXeLbJJYB8vuzek",
     "name" : "ServiceConnector1",
     "type" : "AI_SERVICE_CONNECTOR",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "n4sxhFdw8jIw8jI-gt-1231791-2024-04-15T20:44:53.221Z::svc.xml"
+        "repoHandle" : "3OzI1dq2ME9paab-gt-1290864-2024-04-15T20:27:35.881Z::svc.xml"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
@@ -20,6 +20,6 @@
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2024-04-15T21:13:58.465Z",
+  "updateTime" : "2024-04-15T21:22:06.067Z",
   "objectRefs" : [ ]
 }

@@ -1,9 +1,8 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>3OzI1dq2ME9paab-gt-1290864-2024-04-15T20:27:35.881Z::svc.xml</types1:EntryId>
-      <types1:Name>ServiceConnector1-3</types1:Name>
-      <types1:ParentFlowIds>VNUdyOoMdtlI20h-gt-1228245-2024-04-15T20:28:36.759Z::conn.xml</types1:ParentFlowIds>
+      <types1:EntryId>n4sxhFdw8jIw8jI-gt-1231791-2024-04-15T20:44:53.221Z::svc.xml</types1:EntryId>
+      <types1:Name>ServiceConnector1</types1:Name>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description/>
       <types1:AppliesTo/>
@@ -11,21 +10,21 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>custom_user_common</types1:CreatedBy>
-      <types1:CreationDate>2024-04-15T20:27:36Z</types1:CreationDate>
-      <types1:ModifiedBy>custom_user_common</types1:ModifiedBy>
-      <types1:ModificationDate>2024-04-15T21:01:45Z</types1:ModificationDate>
+      <types1:CreatedBy>skrishtipati_pod1</types1:CreatedBy>
+      <types1:CreationDate>2024-04-15T20:44:53Z</types1:CreationDate>
+      <types1:ModifiedBy>skrishtipati_pod1</types1:ModifiedBy>
+      <types1:ModificationDate>2024-04-15T21:13:00Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>custom_user_common</types1:PublishedBy>
-      <types1:PublicationDate>2024-04-15T21:01:48Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/rt.connector/ServiceConnector1_3/ServiceConnector1_3_svcDef.xml</types1:PublishedContributionId>
+      <types1:PublishedBy>skrishtipati_pod1</types1:PublishedBy>
+      <types1:PublicationDate>2024-04-15T21:13:06Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/ServiceConnector1/ServiceConnector1_svcDef.xml</types1:PublishedContributionId>
       <types1:Entry>
          <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
                             agentOnly="false"
                             debug="false"
                             displayName="ServiceConnector1"
                             label=""
-                            name="ServiceConnector1-3"
+                            name="ServiceConnector1"
                             uuid="807215cc-4a80-45c7-a19c-08759d6cfb6d">
             <description/>
             <tags/>
@@ -85,12 +84,39 @@
                             type="string"/>
                   </output>
                </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="not_found"
+                       maxRedirects="100"
+                       name="not_found"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://reqres.in/api/users/23"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="outcm"
+                            responseStatusCode="true"
+                            type="double"/>
+                  </output>
+               </action>
             </actions>
             <objects/>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>3ipslXoVXeLbJJYB8vuzek</types1:GUID>
+      <types1:GUID>7XxGALEAPULgAtdUchLcQt</types1:GUID>
       <types1:DisplayName>ServiceConnector1</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-04-15T21:02:40.92Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-04-15T21:13:58.137Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

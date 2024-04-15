@@ -1,0 +1,45 @@
+{
+  "objectInfo" : {
+    "id" : "g2t259aJHSif9MdBAnDYuG",
+    "name" : "Test_Git Integra",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "QzqbdpIO3M4WwOC-gt-1290913-2024-04-15T20:29:43.681Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-04-15T20:32:59.507Z",
+  "objectRefs" : [ {
+    "id" : "h2KIgyl9QWaeOZjj8v4Jqq",
+    "name" : "reqres-Conn",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "VNUdyOoMdtlI20h-gt-1228245-2024-04-15T20:28:36.759Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/git_issues"
+  } ]
+}

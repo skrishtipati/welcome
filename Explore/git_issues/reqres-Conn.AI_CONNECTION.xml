@@ -1,0 +1,44 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>VNUdyOoMdtlI20h-gt-1228245-2024-04-15T20:28:36.759Z::conn.xml</types1:EntryId>
+      <types1:Name>reqres-Conn</types1:Name>
+      <types1:ParentFlowIds>QzqbdpIO3M4WwOC-gt-1290913-2024-04-15T20:29:43.681Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>custom_user_common</types1:CreatedBy>
+      <types1:CreationDate>2024-04-15T20:28:37Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>custom_user_common</types1:PublishedBy>
+      <types1:PublicationDate>2024-04-15T20:28:42Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/reqres-Conn/reqres-Conn.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="reqres-Conn"
+                     label="reqres-Conn"
+                     name="reqres-Conn">
+            <description/>
+            <tags/>
+            <agent/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/ServiceConnector1_3/ServiceConnector1_3_svcDef.xml"
+                               guid="3ipslXoVXeLbJJYB8vuzek"
+                               name="ServiceConnector1-3"
+                               supportsConnectionTest="false"
+                               uuid="807215cc-4a80-45c7-a19c-08759d6cfb6d">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>h2KIgyl9QWaeOZjj8v4Jqq</types1:GUID>
+      <types1:DisplayName>reqres-Conn</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-04-15T20:32:59.062Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

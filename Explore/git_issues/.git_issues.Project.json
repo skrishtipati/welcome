@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "7F3aM829YoNdX0cpP0ALwV",
+    "name" : "git_issues",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-04-15T20:32:59.507Z",
+  "objectRefs" : [ ]
+}
